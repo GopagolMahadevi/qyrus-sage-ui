@@ -1,0 +1,153 @@
+<div class="contentContainer position-absolute px-3">
+    <div class="containerHeading pr-3 align-items-center d-flex justify-content-between">
+        <div class="fs-18 py-3">Intent Testing - Test Runs</div>
+        <div class="d-flex align-items-center">
+            <i class="fa-regular fa-house grayIcon pr-3 pointer"></i>
+            <i class="fa-thin fa-angle-right grayDisabledIcon pr-2"></i>
+            <span class="fw-400 fs-12 pr-2 pointer">Intent Testing</span>
+            <i class="fa-thin fa-angle-right grayDisabledIcon pr-2"></i>
+            <span class="fs-12 fw-400 pointer">Flight Booking and FAQ Agent</span>
+        </div>
+    </div>
+    <div class="testCaseCard bg-white d-flex mt-3">
+        <div class="displayContents">
+            <span class="fs-12 fw-400 textGray">Test Case</span>
+            <span class="fs-14 fw-600">Flight Booking and FAQ Agent</span>
+        </div>
+        <div class="verticalLine position-relative"></div>
+        <div class="displayContents">
+            <span class="fs-12 fw-400 textGray">Test Description</span>
+            <span class="fs-14 fw-600">Testing a chatbot which helps users with Flight booking and information</span>
+        </div>
+        <div class="verticalLine position-relative"></div>
+        <div class="testCaseBtns p-3">
+            <button
+                class="dialogFlowBtn btn fs-12 fw-600 justify-content-center align-items-center d-flex">DialogFlow</button>
+            <button class="advanceModeBtn btn fs-12 fw-600 align-items-center d-flex">advance-mode</button>
+        </div>
+    </div>
+    <div class="sortByCard bg-white mt-3 p-3 d-flex align-items-center justify-content-between">
+        <div class="dropdown">
+            <button class="btn sortByDropdown fs-14 fw-400 justify-content-between d-flex" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort by: {{ selectedOption }}
+                <div><i class="fa-solid fa-caret-down"></i></div>
+            </button>
+            <div class="dropdown-menu mt-1" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" (click)="selectOption('delete')">delete</a>
+                <a class="dropdown-item" href="#" (click)="selectOption('benchmark')">benchmark</a>
+                <a class="dropdown-item" href="#" (click)="selectOption('arrow')">arrow</a>
+            </div>
+        </div>
+        <div>
+            <i class="fa-regular fa-star pr-4 starIcon pointer" data-toggle="tooltip" title="Favourite"></i>
+            <i class="fa-regular fa-trash deleteIcon pointer" data-toggle="tooltip" title="Delete"></i>
+        </div>
+    </div>
+    <!-- run table code -->
+    <div class="bg-white mt-3 runTabelScroll">
+        <table class="table table-hover table-borderless">
+            <thead>
+                <tr class="fs-14 fw-600">
+                    <th class="checkboxColWidth pl-4" scope="col">
+                        <input class="runCheckbox position-relative" type="checkbox" name="" id="">
+                    </th>
+                    <th scope="col">Sr. No.</th>
+                    <th scope="col">Run</th>
+                    <th scope="col" class="w-10">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pl-4" scope="row">
+                        <input class="runCheckbox position-relative" type="checkbox" name="" id="">
+                    </td>
+                    <td>1</td>
+                    <td>cda881c6-5818-4064-8017-9a4f2f0de3eb</td>
+                    <td class="w-10">
+                        <i class="fa-regular fa-star starIcon pr-4 pointer" data-toggle="tooltip" title="Favourite"></i>
+                        <i class="fa-regular fa-trash deleteIcon pr-4 pointer" data-toggle="tooltip" title="Delete"></i>
+                        <i class="fa-regular fa-arrow-right arrowRightIcon pointer" data-toggle="tooltip"
+                            title="Goto Test" [routerLink]="['/testcaseone']"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pl-4" scope="row">
+                        <input class="runCheckbox position-relative" type="checkbox" name="" id="">
+                    </td>
+                    <td>2</td>
+                    <td>cda881c6-5818-4064-8017-9a4f2f0de3eb</td>
+                    <td class="w-10">
+                        <i class="fa-regular fa-star starIcon pr-4 pointer" data-toggle="tooltip" title="Favourite"></i>
+                        <i class="fa-regular fa-trash deleteIcon pr-4 pointer" data-toggle="tooltip" title="Delete"></i>
+                        <i class="fa-regular fa-arrow-right arrowRightIcon pointer" data-toggle="tooltip"
+                            title="Goto Test"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pl-4" scope="row">
+                        <input class="runCheckbox position-relative" type="checkbox" name="" id="">
+                    </td>
+                    <td>3</td>
+                    <td>cda881c6-5818-4064-8017-9a4f2f0de3eb</td>
+                    <td class="w-10">
+                        <i class="fa-regular fa-star starIcon pr-4 pointer" data-toggle="tooltip" title="Favourite"></i>
+                        <i class="fa-regular fa-trash deleteIcon pr-4 pointer" data-toggle="tooltip" title="Delete"></i>
+                        <i class="fa-regular fa-arrow-right arrowRightIcon pointer" data-toggle="tooltip"
+                            title="Goto Test"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pl-4" scope="row">
+                        <input class="runCheckbox position-relative" type="checkbox" name="" id="">
+                    </td>
+                    <td>4</td>
+                    <td>cda881c6-5818-4064-8017-9a4f2f0de3eb</td>
+                    <td class="w-10">
+                        <i class="fa-regular fa-star starIcon pr-4 pointer" data-toggle="tooltip" title="Favourite"></i>
+                        <i class="fa-regular fa-trash deleteIcon pr-4 pointer" data-toggle="tooltip" title="Delete"></i>
+                        <i class="fa-regular fa-arrow-right arrowRightIcon pointer" data-toggle="tooltip"
+                            title="Goto Test"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pl-4" scope="row">
+                        <input class="runCheckbox position-relative" type="checkbox" name="" id="">
+                    </td>
+                    <td>5</td>
+                    <td>cda881c6-5818-4064-8017-9a4f2f0de3eb</td>
+                    <td class="w-10">
+                        <i class="fa-regular fa-star starIcon pr-4 pointer" data-toggle="tooltip" title="Favourite"></i>
+                        <i class="fa-regular fa-trash deleteIcon pr-4 pointer" data-toggle="tooltip" title="Delete"></i>
+                        <i class="fa-regular fa-arrow-right arrowRightIcon pointer" data-toggle="tooltip"
+                            title="Goto Test"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- pagination code starts -->
+    <div class="runPagination justify-content-between align-items-end d-flex">
+        <div>
+            <span>Show</span>
+            <select class="mx-2 pl-2">
+                <option value="">10</option>
+                <option value="">20</option>
+                <option value="">30</option>
+                <option value="">40</option>
+            </select>
+            <i class="fa-solid fa-caret-down fs-14"></i>
+            <span>Entries</span>
+        </div>
+        <div class="d-flex align-items-center">
+            <span>Page</span>
+            <div class="align-items-center justify-content-center d-flex bg-white mx-2 pageOne">01</div>
+            <span>of 32</span>
+            <div>
+                <i class="fa-solid fa-angle-left pl-3 angleLeftIcon" data-toggle="tooltip" title="Previous"></i>
+                <i class="fa-solid fa-angle-right pl-4 angleRightIcon" data-toggle="tooltip" title="Next"></i>
+            </div>
+        </div>
+    </div>
+    <!-- pagination code ends -->
+</div>

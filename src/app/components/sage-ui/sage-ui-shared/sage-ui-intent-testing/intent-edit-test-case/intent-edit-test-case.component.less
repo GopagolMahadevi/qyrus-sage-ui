@@ -1,0 +1,264 @@
+.contentContainer {
+    height: calc(100vh - 60px);
+    background-color: var(--surface);
+    top: 48px;
+    left: 16px;
+    right: 16px;
+    border-radius: 8px;
+}
+
+// container heading css starts
+.containerHeading {
+    border-bottom: 1px solid var(--gray-icon);
+    font-weight: 600;
+}
+
+.grayIcon {
+    color: var(--gray);
+}
+
+.grayDisabledIcon {
+    color: var(--gray-icon);
+}
+
+// container heading css ends
+// steps css starts
+.stepsMainCard {
+    height: calc(100vh - 152px);
+}
+
+.stepsCard {
+    width: 270px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.stepDesc {
+    line-height: 24px;
+}
+
+.stepsText {
+    color: var(--gray-icon);
+}
+
+.stepsDesc {
+    color: var(--gray);
+}
+
+.stepsMainCard hr {
+    border: 1px solid var(--seperator);
+    width: 40px;
+    margin: 40px 0px;
+}
+
+// steps css ends
+// back cancel and save&next btns css starts
+.stepBackDiv {
+    height: 48px;
+    border-top: 1px solid var(--seperator);
+    position: fixed;
+    width: 78%;
+    bottom: 50px;
+}
+
+.backBtn:focus {
+    box-shadow: none;
+}
+
+.backBtn {
+    color: var(--primary);
+}
+
+.cancelBtn {
+    background: var(--secondary);
+    border: var(--secondary);
+    border-radius: 4px;
+}
+
+.cancelBtn:focus {
+    outline: none;
+}
+
+.saveAndNextBtn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 4px 8px 4px 16px;
+}
+
+// back cancel and save&next btns css ends
+// steps form css starts
+.stepsScroll {
+    height: calc(100vh - 329px);
+    overflow: auto;
+    right: 0;
+    position: absolute;
+    left: 0;
+    margin-left: 125px;
+}
+
+.stepsContainer {
+    margin: 0px 125px;
+}
+
+.w-72 {
+    width: 68%;
+}
+
+.formLabelText {
+    color: var(--dark-light);
+}
+
+.plarformImages a {
+    width: 180px;
+    height: 70px;
+    border: 1px solid var(--seperator);
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 29px;
+}
+
+.plarformImages img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.testMainDiv hr {
+    border: 1px solid var(--gray);
+}
+
+input[type="file"] {
+    color: transparent;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    padding: 8px 16px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type="file"]::before {
+    content: "Browse";
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 16px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.browseBtn {
+    height: 43px;
+}
+
+.connectBtn {
+    background: var(--primary-light-hover);
+    color: var(--white);
+}
+
+button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.grayDisabled {
+    color: var(--gray-icon);
+}
+
+.radioBtnText {
+    color: var(--dark);
+}
+
+.quantityInput {
+    width: 32px;
+    height: 19px;
+    margin: 0 29px;
+    text-align: center;
+    border: none;
+    background: #fff;
+    color: #8184a1;
+}
+
+.quantity {
+    border: 2px solid var(--seperator);
+    width: 140px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.quantity .svg-inline--fa {
+    height: 1em;
+    width: 1em;
+}
+
+// steps form css ends
+
+// step css start for icon disabled
+.stepsCard .stepIcon {
+    top: 36%;
+    right: 20px;
+    color: var(--success);
+    display: none;
+}
+
+// steps success css starts
+.stepSuccess {
+    background: var(--success-light);
+}
+
+.stepSuccess .stepIcon {
+    top: 36%;
+    right: 20px;
+    color: var(--success);
+    display: block;
+}
+
+.stepSuccess .stepsText,
+.stepSuccess .stepsDesc {
+    color: var(--dark);
+}
+
+// step active css starts
+.stepActive {
+    background: var(--primary);
+}
+
+.stepActive .stepIcon {
+    top: 36%;
+    right: 20px;
+    color: var(--success);
+    display: none;
+}
+
+.stepActive .stepsText,
+.stepActive .stepsDesc {
+    color: var(--white);
+}
+
+.infoModalPopup {
+    width: 259px;
+    background: var(--dark);
+    color: var(--white);
+    border-radius: 8px;
+    position: fixed;
+    transform: translate(36%, -53%);
+}
+
+.infoPopupHeader {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--white);
+}
+
+.closeBtn {
+    color: var(--white);
+    float: right;
+    width: 9px;
+    height: 9px;
+}
+
+.btn:focus {
+    box-shadow: none;
+}

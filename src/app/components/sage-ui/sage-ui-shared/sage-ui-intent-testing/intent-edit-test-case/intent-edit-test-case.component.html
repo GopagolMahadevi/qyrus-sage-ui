@@ -1,0 +1,226 @@
+<div class="contentContainer position-absolute px-3">
+    <div class="containerHeading pr-3 align-items-center d-flex justify-content-between">
+        <div class="fs-18 py-3">Intent Testing - Create Test Case</div>
+        <div class="d-flex align-items-center">
+            <i class="fa-regular fa-house grayIcon pr-3 pointer"></i>
+            <i class="fa-thin fa-angle-right grayDisabledIcon pr-2"></i>
+            <span class="fw-400 fs-12 pr-2 pointer">Intent Testing</span>
+            <i class="fa-thin fa-angle-right grayDisabledIcon pr-2"></i>
+            <span class="fs-12 fw-400 pr-2 pointer">Create Test Case</span>
+        </div>
+    </div>
+    <div class="card mt-3 stepsMainCard w-100">
+        <div class="stepsContainer">
+            <div class="d-flex mt-4">
+                <div class="card stepsCard stepActive pointer" (click)="showContent(1)">
+                    <div class="py-3 pl-3 stepDesc">
+                        <span class="stepsText fs-14 fw-400">Step 1</span><br>
+                        <span class="stepsDesc fs-14 fw-600">Test Information</span>
+                        <div class="stepIcon position-absolute"><i class="fa-solid fa-circle-check fs-16"></i></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card stepsCard stepSuccess pointer" (click)="showContent(2)">
+                    <div class="py-3 pl-3 stepDesc">
+                        <span class="stepsText fs-14 fw-400">Step 2</span><br>
+                        <span class="stepsDesc fs-14 fw-600">Platform Configuration</span>
+                        <div class="stepIcon position-absolute"><i class="fa-solid fa-circle-check fs-16"></i></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card stepsCard pointer" (click)="showContent(3)">
+                    <div class="py-3 pl-3 stepDesc">
+                        <span class="stepsText fs-14 fw-400">Step 3</span><br>
+                        <span class="stepsDesc fs-14 fw-600">Intent Names</span>
+                        <div class="stepIcon position-absolute"><i class="fa-solid fa-circle-check fs-16"></i></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card stepsCard pointer" (click)="showContent(4)">
+                    <div class="py-3 pl-3 stepDesc">
+                        <span class="stepsText fs-14 fw-400">Step 4</span><br>
+                        <span class="stepsDesc fs-14 fw-600">Test Configuration</span>
+                        <div class="stepIcon position-absolute"><i class="fa-solid fa-circle-check fs-16"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stepsScroll">
+                <div class="testMainDiv mt-3 w-100">
+                    <form class="w-72 mt-3 mb-5" *ngIf="stepsContent === 1">
+                        <div class="form-group">
+                            <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Description</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div>
+                            <span class="formLabelText fs-12 fw-400">Select Platform</span>
+                            <div class="plarformImages mt-2 d-flex">
+                                <a href="">
+                                    <img src="../../../assets/images/icons/dialogflow.svg" alt="" data-toggle="tooltip"
+                                        data-placement="bottom" title="Dialogflow">
+                                </a>
+                                <a href="">
+                                    <img src="../../../assets/images/icons/wit.svg" alt="" data-toggle="tooltip"
+                                        data-placement="bottom" title="Wit">
+                                </a>
+                                <a href="">
+                                    <img src="../../../assets/images/icons/lex.svg" alt="" data-toggle="tooltip"
+                                        data-placement="bottom" title="Lex">
+                                </a>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 2">
+                        <div class="form1 stepTwoFormOne d-none">
+                            <div class="form-group">
+                                <label class="fs-12 fw-400 mb-1 formLabelText" for="file-upload">Client Credentials
+                                    JSON</label>
+                                <input class="form-control p-0 browseBtn" type="file" id="file-upload"
+                                    name="file-upload" accept="*" capture="environment">
+                            </div>
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Project ID</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="justify-content-end d-flex pt-4 pb-3">
+                                <button class="btn connectBtn fs-12 fw-600 disabled" data-toggle="tooltip"
+                                    data-placement="bottom" title="Connect">Connect</button>
+                            </div>
+                            <div>
+                                <p class="fs-12 fw-600 mb-3">To Grant access, login with the account which has access to
+                                    your DialogFlow APIs. Copy the Auth Code and paste below.</p>
+                                <button class="btn fs-12 fw-600 grayDisabled mb-3" data-toggle="tooltip"
+                                    data-placement="bottom" title="Grant Access">Grant Access</button>
+                            </div>
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Enter the authorization code obtained from the
+                                    grant access tab.nts File (.csv)</label>
+                                <input class="form-control fs-14 fw-400 grayDisabled" type="text"
+                                    placeholder="Authorization Code">
+                            </div>
+                        </div>
+                        <!-- step 2 form 2 -->
+                        <div class="form2 d-none">
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Server Token</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <!-- step 2 form 3 -->
+                        <div class="form3">
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Access Key</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Secret Key</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Bot Name</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Bot Alias</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group formLabelText">
+                                <label class="fs-12 fw-400 mb-1" for="">Bot Region</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 3">
+                        <!-- step 3 -->
+                        <div class="form-group">
+                            <label class="fs-12 fw-400 mb-1 formLabelText" for="file-upload">Intents File (.csv) <i
+                                    class="fa-regular fa-circle-info"></i></label>
+                            <input class="form-control p-0 browseBtn" type="file" id="file-upload" name="file-upload"
+                                accept="*" capture="environment">
+                        </div>
+                    </div>
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 4">
+                        <!-- step 4 -->
+                        <div>
+                            <label class="fs-12 fw-400 formLabelText mb-3" for="">Test Type</label>
+                            <div class="form-check pb-4 pl-0">
+                                <label class="form-check-label fs-14 fw-400 radioBtnText">
+                                    <input type="radio" class="" name="testType" id="" value="checkedValue">
+                                    Normal<i class="fa-regular fa-circle-info pl-2 pointer" data-toggle="popover"
+                                        title="About Normal Mode?"
+                                        data-content="In Normal mode of testing your bot, we do not apply any type of text transformations while testing your bot via the paraphrases we have generated.
+It will be more of a vannila test. To test your bot functionality with spelling mistakes, grammatical mistakes, null sentence structures, contractions, etc. You can choose to opt for either of the two modes mentioned below based on your requirements."></i>
+                                </label>
+                            </div>
+                            <div class="form-check pb-4">
+                                <label class="form-check-label fs-14 fw-400 radioBtnText">
+                                    <input type="radio" class="form-check-input" name="testType" id=""
+                                        value="checkedValue">
+                                    Induce Human Errors<i class="fa-regular fa-circle-info pl-2 pointer"
+                                        data-toggle="popover" title="About Human Error Mode?" data-content="In this mode we apply few different transformations to the paraphrases we generate.These transformations mimics some human imperfections while typing or writing.
+
+The following transformations are applied:"></i>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label fs-14 fw-400 radioBtnText">
+                                    <input type="radio" class="form-check-input" name="testType" id=""
+                                        value="checkedValue">
+                                    Advance Mode<i class="fa-regular fa-circle-info pl-2 pointer" data-toggle="popover"
+                                        title="About Advance Mode?" data-content="In this mode we apply seven different transformation in total and more to come. These transformations will mimic the writing/typing quality of non-english users.
+
+The following transformations are applied:"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="pt-3">
+                            <label class="fs-12 fw-400 mb-1 formLabelText" for="">Paraphrases per Intent</label>
+                            <div class="form-group d-flex align-items-center pt-3">
+
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-12 fw-400 pr-3">Start Paraphrases</span>
+                                    <div class="quantity d-flex align-items-center justify-content-center mr-3">
+                                        <a href="" class=""><span><i
+                                                    class="fa-solid fa-square-minus formLabelText"></i></span></a>
+                                        <input name="" type="text" class="quantityInput" value="1">
+                                        <a href="" class=""><span><i
+                                                    class="fa-solid fa-square-pluse formLabelText"></i></span></a>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-12 fw-400 pl-3 pr-3">Total Sentences</span>
+                                    <div class="quantity d-flex align-items-center justify-content-center">
+                                        <a href="" class=""><span><i
+                                                    class="fa-solid fa-square-minus formLabelText"></i></span></a>
+                                        <input name="" type="text" class="quantityInput" value="1">
+                                        <a href="" class=""><span><i
+                                                    class="fa-solid fa-square-pluse formLabelText"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stepBackDiv justify-content-between d-flex align-items-end">
+                <button type="button" class="btn backBtn fs-12 fw-600" data-toggle="tooltip" data-placement="bottom"
+                    title="Back">
+                    <i class="fa-solid fa-angle-left pl-3 pr-2"></i>Back
+                </button>
+                <div>
+                    <button class="cancelBtn fs-12 fw-600 py-2 px-3 mr-3" type="button" data-toggle="tooltip"
+                        data-placement="bottom" title="Cancel">Cancel</button>
+                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" type="button" data-toggle="tooltip"
+                        data-placement="bottom" title="Save&Next">
+                        <span>Save & Next</span>
+                        <i class="fa-solid fa-angle-right pl-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
