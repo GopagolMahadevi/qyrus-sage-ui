@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntityTestingComponent } from './entity-testing.component';
+import { EntityTestingComponent } from './sage-ui-entity-testing.component';
 
 describe('EntityTestingComponent', () => {
   let component: EntityTestingComponent;
@@ -8,9 +8,9 @@ describe('EntityTestingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EntityTestingComponent ]
+      declarations: [EntityTestingComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

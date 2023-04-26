@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IntentEditTestCaseComponent } from './intent-edit-test-case.component';
+import { IntentEditTestCaseComponent } from './sage-ui-intent-edit-test-case.component';
 
 describe('IntentEditTestCaseComponent', () => {
   let component: IntentEditTestCaseComponent;
@@ -8,9 +8,9 @@ describe('IntentEditTestCaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IntentEditTestCaseComponent ]
+      declarations: [IntentEditTestCaseComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

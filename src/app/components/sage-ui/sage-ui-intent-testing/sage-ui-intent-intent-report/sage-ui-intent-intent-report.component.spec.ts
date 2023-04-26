@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IntentIntentReportComponent } from './intent-intent-report.component';
+import { IntentIntentReportComponent } from './sage-ui-intent-intent-report.component';
 
 describe('IntentIntentReportComponent', () => {
   let component: IntentIntentReportComponent;
@@ -8,9 +8,9 @@ describe('IntentIntentReportComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IntentIntentReportComponent ]
+      declarations: [IntentIntentReportComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

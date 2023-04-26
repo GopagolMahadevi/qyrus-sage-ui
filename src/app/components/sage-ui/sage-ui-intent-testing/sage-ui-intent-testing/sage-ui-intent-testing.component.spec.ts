@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IntentTestingComponent } from './intent-testing.component';
+import { IntentTestingComponent } from './sage-ui-intent-testing.component';
 
 describe('IntentTestingComponent', () => {
   let component: IntentTestingComponent;
@@ -8,9 +8,9 @@ describe('IntentTestingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IntentTestingComponent ]
+      declarations: [IntentTestingComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
