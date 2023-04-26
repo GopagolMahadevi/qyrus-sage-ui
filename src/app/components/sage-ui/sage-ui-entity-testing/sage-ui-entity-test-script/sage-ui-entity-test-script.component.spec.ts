@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntityTestScriptComponent } from './entity-test-script.component';
+import { EntityTestScriptComponent } from './sage-ui-entity-test-script.component';
 
 describe('EntityTestScriptComponent', () => {
   let component: EntityTestScriptComponent;
@@ -8,9 +8,9 @@ describe('EntityTestScriptComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EntityTestScriptComponent ]
+      declarations: [EntityTestScriptComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

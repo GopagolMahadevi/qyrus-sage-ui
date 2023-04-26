@@ -7,7 +7,6 @@
                     <img src="../../../assets/images/logo-white.svg">
                 </div>
                 <div class="w-100 logoDesc mt-3">Making testing Better, Faster, Smarter.</div>
-
             </div>
         </div>
         <div class="form col-md-8 p-5 d-flex align-items-center">
@@ -18,25 +17,38 @@
                 <p class="fw-400 descText mb-1">World's first AI-Powered Conversational Bot Testing Platform!</p>
                 <p class="fw-400 reqText mb-1">Please enter your email & password to login.</p>
 
-                <div class="loginField fw-400">
-                    <label class="w-100 fs-12">Email
-                        <span>*</span>
-                    </label>
-                    <input type="email" class="w-100 fs-14">
+                <form>
+                    <div formGroupName="userData">
+                        <div class="form-group loginField">
+                            <label class="w-100 fs-12" for="email">Email
+                                <span>*</span>
+                            </label>
+                            <input type="email" class="form-control w-100 fs-14" id="email" formControlName="email"
+                                aria-describedby="emailHelp">
+                            <span class="help-block fs-14" *ngIf="">
+                                please enter a valid email id.
+                            </span>
+                        </div>
+                        <div class="form-group loginField">
+                            <label for="password" class="w-100 mt-3 fs-12">Password<span>*</span></label>
+                            <input type="password" class="form-control" id="password" formControlName="password">
+                            <span class="help-block fs-14" *ngIf="">
+                                please enter a valid password.
+                            </span>
+                            <i class="fa-regular fa-eye pointer" aria-hidden="true" data-toggle="tooltip" title="Show">
+                            </i>
+                            <!-- <i class="fa-regular fa-eye-slash" aria-hidden="true" data-toggle="tooltip" title="Hide"> </i> -->
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mt-4">
+                        <div class="form-group form-check d-flex align-items-center fw-400 checkField mb-0">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label ml-2 fs-14" for="exampleCheck1">Remember me.</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary signBtn fw-600 fs-14 br-4p">Sign In</button>
+                    </div>
+                </form>
 
-                    <label class="w-100 mt-3 fs-12">Password <span>*</span></label>
-                    <input type="password" class="w-100 fs-14">
-                    <i class="fa-regular fa-eye pointer" aria-hidden="true" data-toggle="tooltip" title="Show"> </i>
-                    <!-- <i class="fa-regular fa-eye-slash" aria-hidden="true" data-toggle="tooltip" title="Hide"> </i> -->
-                </div>
-
-                <div class="d-flex justify-content-between mt-3">
-                    <span class="d-flex align-items-center fw-400 checkField fs-14">
-                        <input type="checkbox" class="pointer">
-                        <span class="ml-2">Remember me.</span>
-                    </span>
-                    <button class="signBtn fw-600 fs-14 br-4p" [routerLink]="['/home']">Sign in</button>
-                </div>
             </div>
         </div>
     </div>

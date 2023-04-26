@@ -89,8 +89,8 @@ export var single = [
 
 @Component({
   selector: 'app-intent-intent-report',
-  templateUrl: './intent-intent-report.component.html',
-  styleUrls: ['./intent-intent-report.component.less']
+  templateUrl: './sage-ui-intent-intent-report.component.html',
+  styleUrls: ['./sage-ui-intent-intent-report.component.less']
 })
 export class IntentIntentReportComponent implements OnInit {
 

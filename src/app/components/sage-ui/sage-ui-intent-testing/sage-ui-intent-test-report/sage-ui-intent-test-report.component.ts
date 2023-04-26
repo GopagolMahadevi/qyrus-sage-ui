@@ -49,8 +49,8 @@ export var single = [
 
 @Component({
   selector: 'app-intent-test-report',
-  templateUrl: './intent-test-report.component.html',
-  styleUrls: ['./intent-test-report.component.less']
+  templateUrl: './sage-ui-intent-test-report.component.html',
+  styleUrls: ['./sage-ui-intent-test-report.component.less']
 })
 export class IntentTestReportComponent implements OnInit {
 

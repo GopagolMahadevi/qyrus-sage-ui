@@ -4,7 +4,7 @@ import { MainComponent } from './main/main.component';
 import { SageUiLoginComponent } from './sage-ui-login/sage-ui-login.component';
 import { SageUiDashboardComponent } from './sage-ui-dashboard/sage-ui-dashboard.component';
 import { SageUiNavbarComponent } from './sage-ui-common/sage-ui-navbar/sage-ui-navbar.component';
-import { IntentTestingComponent } from './sage-ui-shared/sage-ui-intent-testing/intent-testing/intent-testing.component';
+import { IntentTestingComponent } from './sage-ui-intent-testing/sage-ui-intent-testing/sage-ui-intent-testing.component';
 
 const routes: Routes = [
   {

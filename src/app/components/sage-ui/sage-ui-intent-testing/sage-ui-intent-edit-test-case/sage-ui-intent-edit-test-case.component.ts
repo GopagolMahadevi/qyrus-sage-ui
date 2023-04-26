@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-intent-edit-test-case',
-  templateUrl: './intent-edit-test-case.component.html',
-  styleUrls: ['./intent-edit-test-case.component.less']
+  templateUrl: './sage-ui-intent-edit-test-case.component.html',
+  styleUrls: ['./sage-ui-intent-edit-test-case.component.less']
 })
 export class IntentEditTestCaseComponent implements OnInit {
   stepsContent: number = 1;

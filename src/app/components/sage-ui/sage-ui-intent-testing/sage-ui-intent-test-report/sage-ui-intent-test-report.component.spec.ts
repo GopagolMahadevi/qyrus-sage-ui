@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IntentTestReportComponent } from './intent-test-report.component';
+import { IntentTestReportComponent } from './sage-ui-intent-test-report.component';
 
 describe('IntentTestReportComponent', () => {
   let component: IntentTestReportComponent;

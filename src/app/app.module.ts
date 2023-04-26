@@ -7,7 +7,6 @@ import { SageUiModule } from './components/sage-ui/sage-ui.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent

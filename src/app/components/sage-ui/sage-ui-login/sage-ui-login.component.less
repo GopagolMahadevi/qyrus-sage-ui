@@ -20,22 +20,16 @@
 }
 
 .signBtn {
-    color: #fff;
+    // color: #fff;
     padding: 8px 16px;
     height: 40px;
-    background: var(--primary);
+    // background: var(--primary);
     // border-radius: 4px;
     border: none !important;
     width: 250px;
     // font-size: 14px;
     line-height: 20px;
     outline: none;
-}
-
-input[type=checkbox] {
-    margin-top: 0.1rem;
-    height: 16px;
-    width: 16px;
 }
 
 .reqText {
@@ -54,7 +48,7 @@ input[type=checkbox] {
     height: 40px;
     border-radius: 4px;
     border: 2px solid var(--seperator);
-    padding: 10px 8px 9px 8px;
+    padding: 10px 8px;
     color: var(--dark);
     // font-size: 14px;
     outline: none;
@@ -80,11 +74,17 @@ input[type=checkbox] {
     line-height: 20px;
 }
 
+input[type=checkbox] {
+    margin-top: 0.1rem;
+    height: 16px;
+    width: 16px;
+}
+
 .fa-eye,
 .fa-eye-slash {
     position: absolute;
     left: 87%;
-    bottom: 31%;
+    bottom: 30.5%;
     color: var(--gray);
 }
 
@@ -99,4 +99,8 @@ input[type=checkbox] {
     text-align: center;
     font-weight: 100;
     font-family: system-ui;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
 }

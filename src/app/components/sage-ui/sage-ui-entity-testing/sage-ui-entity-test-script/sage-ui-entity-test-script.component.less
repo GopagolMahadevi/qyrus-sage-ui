@@ -1,7 +1,7 @@
 .contentContainer {
     height: calc(100vh - 60px);
     background-color: var(--surface);
-
+    // position: absolute;
     top: 48px;
     left: 16px;
     right: 16px;
@@ -10,22 +10,66 @@
 
 .containerHeading {
     border-bottom: 1px solid var(--gray-icon);
+    // font-weight: 600;
+    // font-size: 24px;
 }
 
 .testCaseCard {
     height: 80px;
     border-radius: 8px;
+    // background-color: var(--white);
 }
 
+.textGray {
+    color: var(--gray);
+}
+
+// .displayContents {
+//     display: grid;
+//     // width: 220px;
+//     padding: 18px 16px;
+//     // border-right: 1px solid var(--surface-hover);
+// }
 
 .grayIcon {
     color: var(--gray);
 }
 
+.verticalLine {
+    height: 50px;
+    border-left: 1px solid var(--surface-hover);
+    top: 0;
+}
+
+.testCaseBtns button {
+    border: 1px solid var(--info);
+    outline: none;
+    background: transparent;
+    color: var(--info);
+}
+
+// .dialogFlowBtn {
+//     height: 20px;
+//     border: 1px solid var(--info);
+//     border-radius: 4px;
+//     color: var(--info);
+// }
+
+// .advanceModeBtn {
+//     height: 20px;
+//     border: 1px solid var(--danger);
+//     border-radius: 4px;
+//     color: var(--danger);
+// }
+
 .btn:focus {
     box-shadow: none;
 }
 
+// .sortByCard {
+//     height: 72px;
+//     border-radius: 8px;
+// }
 
 .dropdown .dropdown-menu {
     color: var(--dark);
@@ -54,7 +98,6 @@
 .dropdown-menu a {
     padding: 10px 8px;
 }
-
 
 .searchIcon {
     color: var(--gray);
@@ -102,15 +145,15 @@
     outline: none;
 }
 
-.cardBtn button:nth-child(1) {
-    color: var(--info);
-    border: 1px solid var(--info);
-}
+// .cardBtn button:nth-child(1) {
+//     color: var(--info);
+//     border: 1px solid var(--info);
+// }
 
-.cardBtn button:nth-child(2) {
-    color: var(--danger);
-    border: 1px solid var(--danger);
-}
+// .cardBtn button:nth-child(2) {
+//     color: var(--danger);
+//     border: 1px solid var(--danger);
+// }
 
 .card {
     width: 310px;
@@ -127,7 +170,7 @@
     display: inline-block;
 }
 
-.updateBtn .fa-pen {
+.updateBtn .fa-solid {
     color: var(--primary)
 }
 
@@ -144,14 +187,14 @@
 
 }
 
-.updateBtn .col-md-4 {
-    height: 56px;
+.updateBtn .col-md-3 {
+    // height: 56px;
     text-align: center;
     padding: 16px;
     border-right: 1px solid var(--surface-pressed);
 }
 
-.updateBtn .col-md-4:hover {
+.updateBtn .col-md-3:hover {
     background-color: var(--surface-pressed);
 }
 
@@ -165,4 +208,18 @@
     padding: 4px 4px;
     width: 24px;
     color: white;
+}
+
+.normal {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.error {
+    border: 1px solid var(--warning);
+    color: var(--warning);
+}
+
+.cardBlock .col-md-3 {
+    height: 100%;
 }

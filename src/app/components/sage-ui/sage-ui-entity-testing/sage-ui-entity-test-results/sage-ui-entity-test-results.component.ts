@@ -50,8 +50,8 @@ export var single = [
 
 @Component({
   selector: 'app-entity-test-results',
-  templateUrl: './entity-test-results.component.html',
-  styleUrls: ['./entity-test-results.component.less']
+  templateUrl: './sage-ui-entity-test-results.component.html',
+  styleUrls: ['./sage-ui-entity-test-results.component.less']
 })
 export class EntityTestResultsComponent implements OnInit {
 

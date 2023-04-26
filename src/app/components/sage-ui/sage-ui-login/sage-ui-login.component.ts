@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-sage-ui-login',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sage-ui-login.component.less']
 })
 export class SageUiLoginComponent implements OnInit {
+  // SignupForm: FormGroup;
 
-  constructor() { }
+  ngOnInit() {
+    // this.SignupForm = new FormGroup({
+    //   'userData': new FormGroup({
+    //     'email': new FormControl(null, [Validators.required]),
+    //     'password': new FormControl(null, [Validators.required, Validators.email])
+    //   })
+    // });
 
-  ngOnInit(): void {
+    // this.SignupForm.setValue({
+    //   'userData': {
+    //     'password': 'qyrus',
+    //     'email': 'qyrus@gmail.com'
+    //   }
+    // })
+
   }
 
 }
