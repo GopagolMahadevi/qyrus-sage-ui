@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntentEditTestCaseComponent implements OnInit {
   stepsContent: number = 1;
+
+  activePopover: string = "";
+  showOverlay: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +17,17 @@ export class IntentEditTestCaseComponent implements OnInit {
 
   showContent(contentNumber: number) {
     this.stepsContent = contentNumber;
+  }
+
+
+  showPopover(popoverName: string) {
+    this.activePopover = popoverName;
+    this.showOverlay = true;
+  }
+
+  closePopover() {
+    this.activePopover = "";
+    this.showOverlay = false;
   }
 
 }

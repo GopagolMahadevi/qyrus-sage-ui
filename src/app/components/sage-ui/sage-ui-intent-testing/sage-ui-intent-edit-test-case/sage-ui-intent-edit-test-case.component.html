@@ -46,38 +46,48 @@
             </div>
             <div class="stepsScroll">
                 <div class="testMainDiv mt-3 w-100">
-                    <form class="w-72 mt-3 mb-5" *ngIf="stepsContent === 1">
-                        <div class="form-group">
-                            <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Name</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Description</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <div>
-                            <span class="formLabelText fs-12 fw-400">Select Platform</span>
-                            <div class="plarformImages mt-2 d-flex">
-                                <a href="">
-                                    <img src="../../../assets/images/icons/dialogflow.svg" alt="" data-toggle="tooltip"
-                                        data-placement="bottom" title="Dialogflow">
-                                </a>
-                                <a href="">
-                                    <img src="../../../assets/images/icons/wit.svg" alt="" data-toggle="tooltip"
-                                        data-placement="bottom" title="Wit">
-                                </a>
-                                <a href="">
-                                    <img src="../../../assets/images/icons/lex.svg" alt="" data-toggle="tooltip"
-                                        data-placement="bottom" title="Lex">
-                                </a>
-                            </div>
-
-                        </div>
-                    </form>
-                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 2">
-                        <div class="form1 stepTwoFormOne d-none">
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 1">
+                        <form action="">
                             <div class="form-group">
-                                <label class="fs-12 fw-400 mb-1 formLabelText">Client Credentials
+                                <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Description</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div>
+                                <span class="formLabelText fs-12 fw-400">Select Platform</span>
+                                <div class="radio-group plarformImages mt-2 d-flex align-items-center">
+                                    <label for="radio1">
+                                        <input type="radio" id="radio1" name="radio-group">
+                                        <div class="radio-image justify-content-center d-flex" data-toggle="tooltip"
+                                            data-placement="bottom" title="Dialogflow"><img
+                                                src="../../../../../assets/images/dialogflow.svg" alt=""></div>
+                                    </label>
+                                    <label for="radio2">
+                                        <input type="radio" id="radio2" name="radio-group">
+                                        <div class="radio-image justify-content-center d-flex" data-toggle="tooltip"
+                                            data-placement="bottom" title="Wit">
+                                            <img src="../../../../../assets/images/wit.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label for="radio3">
+                                        <input type="radio" id="radio3" name="radio-group">
+                                        <div class="radio-image justify-content-center d-flex" data-toggle="tooltip"
+                                            data-placement="bottom" title="Lex">
+                                            <img src="../../../../../assets/images/lex.svg" alt="">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 2">
+                        <!-- step 2 form 1 -->
+                        <form class="form1 stepTwoFormOne d-none">
+                            <div class="form-group">
+                                <label class="fs-12 fw-400 mb-1 formLabelText" for="file-upload">Client Credentials
                                     JSON</label>
                                 <input class="form-control p-0 browseBtn" type="file" id="file-upload"
                                     name="file-upload" accept="*" capture="environment">
@@ -92,26 +102,28 @@
                             </div>
                             <div>
                                 <p class="fs-12 fw-600 mb-3">To Grant access, login with the account which has access to
-                                    your DialogFlow APIs. Copy the Auth Code and paste below.</p>
+                                    your DialogFlow
+                                    APIs. Copy the Auth Code and paste below.</p>
                                 <button class="btn fs-12 fw-600 grayDisabled mb-3" data-toggle="tooltip"
                                     data-placement="bottom" title="Grant Access">Grant Access</button>
                             </div>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Enter the authorization code obtained from the
-                                    grant access tab.nts File (.csv)</label>
+                                    grant access
+                                    tab.nts File (.csv)</label>
                                 <input class="form-control fs-14 fw-400 grayDisabled" type="text"
                                     placeholder="Authorization Code">
                             </div>
-                        </div>
+                        </form>
                         <!-- step 2 form 2 -->
-                        <div class="form2 d-none">
+                        <form class="form2 d-none">
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Server Token</label>
                                 <input class="form-control" type="text">
                             </div>
-                        </div>
+                        </form>
                         <!-- step 2 form 3 -->
-                        <div class="form3">
+                        <form class="form3">
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Access Key</label>
                                 <input class="form-control" type="text">
@@ -132,77 +144,189 @@
                                 <label class="fs-12 fw-400 mb-1" for="">Bot Region</label>
                                 <input class="form-control" type="text">
                             </div>
-                        </div>
+                        </form>
                     </div>
+                    <!-- step 3 -->
                     <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 3">
-                        <!-- step 3 -->
-                        <div class="form-group">
-                            <label class="fs-12 fw-400 mb-1 formLabelText">Intents File (.csv) <i
-                                    class="fa-regular fa-circle-info"></i></label>
-                            <input class="form-control p-0 browseBtn" type="file" id="file-upload" name="file-upload"
-                                accept="*" capture="environment">
-                        </div>
+                        <form action="">
+                            <div class="form-group">
+                                <label class="fs-12 fw-400 mb-1 formLabelText" for="">Intents File (.csv) <i
+                                        class="fa-regular fa-circle-info"></i></label>
+                                <input class="form-control p-0 browseBtn" type="file" id="file-upload"
+                                    name="file-upload" accept="*" capture="environment">
+                            </div>
+                        </form>
                     </div>
+                    <!-- step 4 -->
                     <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 4">
-                        <!-- step 4 -->
-                        <div>
+                        <form action="">
                             <label class="fs-12 fw-400 formLabelText mb-3" for="">Test Type</label>
-                            <div class="form-check pb-4 pl-0">
+                            <div class="form-check pb-4 d-flex align-items-center pl-0">
                                 <label class="form-check-label fs-14 fw-400 radioBtnText">
                                     <input type="radio" class="" name="testType" id="" value="checkedValue">
-                                    Normal<i class="fa-regular fa-circle-info pl-2 pointer" data-toggle="popover"
-                                        title="About Normal Mode?"
-                                        data-content="In Normal mode of testing your bot, we do not apply any type of text transformations while testing your bot via the paraphrases we have generated.
-It will be more of a vannila test. To test your bot functionality with spelling mistakes, grammatical mistakes, null sentence structures, contractions, etc. You can choose to opt for either of the two modes mentioned below based on your requirements."></i>
+                                    Normal
                                 </label>
-                            </div>
-                            <div class="form-check pb-4">
-                                <label class="form-check-label fs-14 fw-400 radioBtnText">
-                                    <input type="radio" class="form-check-input" name="testType" id=""
-                                        value="checkedValue">
-                                    Induce Human Errors<i class="fa-regular fa-circle-info pl-2 pointer"
-                                        data-toggle="popover" title="About Human Error Mode?" data-content="In this mode we apply few different transformations to the paraphrases we generate.These transformations mimics some human imperfections while typing or writing.
 
-The following transformations are applied:"></i>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label fs-14 fw-400 radioBtnText">
-                                    <input type="radio" class="form-check-input" name="testType" id=""
-                                        value="checkedValue">
-                                    Advance Mode<i class="fa-regular fa-circle-info pl-2 pointer" data-toggle="popover"
-                                        title="About Advance Mode?" data-content="In this mode we apply seven different transformation in total and more to come. These transformations will mimic the writing/typing quality of non-english users.
-
-The following transformations are applied:"></i>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="pt-3">
-                            <label class="fs-12 fw-400 mb-1 formLabelText" for="">Paraphrases per Intent</label>
-                            <div class="form-group d-flex align-items-center pt-3">
-
-                                <div class="d-flex align-items-center">
-                                    <span class="fs-12 fw-400 pr-3">Start Paraphrases</span>
-                                    <div class="quantity d-flex align-items-center justify-content-center mr-3">
-                                        <a href="" class=""><span><i
-                                                    class="fa-solid fa-square-minus formLabelText"></i></span></a>
-                                        <input name="" type="text" class="quantityInput" value="1">
-                                        <a href="" class=""><span><i
-                                                    class="fa-solid fa-square-pluse formLabelText"></i></span></a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <span class="fs-12 fw-400 pl-3 pr-3">Total Sentences</span>
-                                    <div class="quantity d-flex align-items-center justify-content-center">
-                                        <a href="" class=""><span><i
-                                                    class="fa-solid fa-square-minus formLabelText"></i></span></a>
-                                        <input name="" type="text" class="quantityInput" value="1">
-                                        <a href="" class=""><span><i
-                                                    class="fa-solid fa-square-pluse formLabelText"></i></span></a>
+                                <div>
+                                    <div><i class="fa-regular fa-circle-info fs-12 grayIcon pointer pl-2"
+                                            (click)="showPopover('popover1')"></i></div>
+                                    <div class="infoModalPopup" *ngIf="activePopover === 'popover1'">
+                                        <div class="" *ngIf="activePopover === 'popover1'">
+                                            <div
+                                                class="infoPopupHeader d-flex align-items-center justify-content-between">
+                                                <span class="fs-12 fw-600">
+                                                    About Normal Mode?
+                                                </span>
+                                                <div>
+                                                    <i class="fa-solid fa-xmark fs-12" (click)="closePopover()"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p class="fs-14 fw-400 p-3">In Normal mode of testing your bot, we do
+                                                    not apply any type of text
+                                                    transformations
+                                                    while testing your bot via the paraphrases we have generated. <br>
+                                                    It will be more of a vanilla test. To test your bot functionality
+                                                    with spelling mistakes,
+                                                    grammatical
+                                                    mistakes,
+                                                    null sentence structures, contractions, etc. You can choose to opt
+                                                    for either of the two modes
+                                                    mentioned
+                                                    below
+                                                    based on your requirements.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="form-check pb-4 d-flex align-items-center pl-0">
+                                <label class="form-check-label fs-14 fw-400 radioBtnText">
+                                    <input type="radio" class="" name="testType" id="" value="checkedValue">
+                                    Induce Human Errors
+                                </label>
+                                <div>
+                                    <div><i class="fa-regular fa-circle-info grayIcon fs-12 pointer pl-2"
+                                            (click)="showPopover('popover2')"></i></div>
+                                    <div *ngIf="activePopover === 'popover2'" class="infoModalPopup">
+                                        <div class="" *ngIf="activePopover === 'popover2'">
+                                            <div
+                                                class="infoPopupHeader d-flex align-items-center justify-content-between">
+                                                <span class="fs-12 fw-600">
+                                                    About Human Error Mode?
+                                                </span>
+                                                <div><i class="fa-solid fa-xmark fs-12" (click)="closePopover()"></i>
+                                                </div>
+                                            </div>
+                                            <div class="p-3">
+                                                <p class="fs-14 fw-400">In this mode we apply seven different
+                                                    transformation in total and more
+                                                    to come. These transformations will mimic the writing/typing quality
+                                                    of non-english users.
+                                                </p>
+                                                <p class="fs-14 fw-400">The following transformations are applied:</p>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Spelling Mistake Transform</span>
+                                                </div>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Word Swap Transform</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Text Contractions</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-check d-flex align-items-center pl-0">
+                                <label class="form-check-label fs-14 fw-400 radioBtnText">
+                                    <input type="radio" class="" name="testType" id="" value="checkedValue">
+                                    Advance Mode
+                                </label>
+                                <div>
+                                    <div><i class="fa-regular fa-circle-info grayIcon fs-12 pointer pl-2"
+                                            (click)="showPopover('popover3')"></i></div>
+                                    <div *ngIf="activePopover === 'popover3'" class="infoModalPopup">
+                                        <div class="" *ngIf="activePopover === 'popover3'">
+                                            <div
+                                                class="infoPopupHeader d-flex align-items-center justify-content-between">
+                                                <span class="fs-12 fw-600">
+                                                    About Advance Mode?
+                                                </span>
+                                                <div><i class="fa-solid fa-xmark fs-12" (click)="closePopover()"></i>
+                                                </div>
+                                            </div>
+                                            <div class="p-3">
+                                                <p class="fs-14 fw-400">In this mode we apply seven different
+                                                    transformation in total and more
+                                                    to come. These transformations will mimic the writing/typing quality
+                                                    of non-english users.
+                                                </p>
+                                                <p class="fs-14 fw-400">The following transformations are applied:</p>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Spelling Mistake Transform</span>
+                                                </div>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Word Swap Transform</span>
+                                                </div>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Text Contractions</span>
+                                                </div>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Null/No Sentence Structure</span>
+                                                </div>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Using untrivial words</span>
+                                                </div>
+                                                <div class="d-flex align-items-center pb-1">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Similar word repetition</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-solid fa-circle-arrow-right pr-2"></i>
+                                                    <span class="fs-12 fw-400 pl-1">Similar word substitution</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="showOverlay" class="overlay" (click)="closePopover()"></div>
+                            <div class="pt-3">
+                                <label class="fs-12 fw-400 mb-1 formLabelText" for="">Paraphrases per Intent</label>
+                                <div class="form-group d-flex align-items-center pt-3">
+                                    <div class="d-flex align-items-center">
+                                        <span class="fs-12 fw-400 pr-3">Start Paraphrases</span>
+                                        <div class="quantity d-flex align-items-center justify-content-center mr-3">
+                                            <span class="pointer"><i
+                                                    class="fa-solid fa-square-minus formLabelText"></i></span>
+                                            <input name="" type="text" class="quantityInput" value="1">
+                                            <span class="pointer"><i
+                                                    class="fa-solid fa-square-plus formLabelText"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="fs-12 fw-400 pl-3 pr-3">Total Sentences</span>
+                                        <div class="quantity d-flex align-items-center justify-content-center">
+                                            <span class="pointer"><i
+                                                    class="fa-solid fa-square-minus formLabelText"></i></span>
+                                            <input name="" type="text" class="quantityInput" value="1">
+                                            <span class="pointer"><i
+                                                    class="fa-solid fa-square-plus formLabelText"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
