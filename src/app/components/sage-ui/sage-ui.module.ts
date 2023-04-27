@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SageUiRoutingModule } from './sage-ui-routing.module';
 import { SageUiComponent } from './sage-ui.component';
 import { SageUiDashboardComponent } from './sage-ui-dashboard/sage-ui-dashboard.component';
@@ -20,7 +19,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SageUiEntityTestRunsComponent } from './sage-ui-entity-testing/sage-ui-entity-test-runs/sage-ui-entity-test-runs.component';
 import { SageUiEntityTestPhrasesComponent } from './sage-ui-entity-testing/sage-ui-entity-test-phrases/sage-ui-entity-test-phrases.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,9 @@ import { SageUiEntityTestPhrasesComponent } from './sage-ui-entity-testing/sage-
     CommonModule,
     SageUiRoutingModule,
     NgxChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ]
 })
 export class SageUiModule { }

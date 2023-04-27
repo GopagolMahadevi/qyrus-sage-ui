@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASEURL_Sage_Service: "https://testui-qyrusbot.quinnox.info/",
+
+  BASEURL_Sage_data_Service: "https://devui-qyrusbot.quinnox.info/cit-backend/"
+
 };
 
 /*
