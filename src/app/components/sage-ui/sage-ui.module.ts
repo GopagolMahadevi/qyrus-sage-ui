@@ -18,6 +18,8 @@ import { IntentSuccessTestCaseComponent } from './sage-ui-intent-testing/sage-ui
 import { IntentEditTestCaseComponent } from './sage-ui-intent-testing/sage-ui-intent-edit-test-case/sage-ui-intent-edit-test-case.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SageUiEntityTestRunsComponent } from './sage-ui-entity-testing/sage-ui-entity-test-runs/sage-ui-entity-test-runs.component';
+import { SageUiEntityTestPhrasesComponent } from './sage-ui-entity-testing/sage-ui-entity-test-phrases/sage-ui-entity-test-phrases.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EntityTestResultsComponent,
     IntentSuccessTestCaseComponent,
     IntentEditTestCaseComponent,
+    SageUiEntityTestRunsComponent,
+    SageUiEntityTestPhrasesComponent,
 
 
   ],

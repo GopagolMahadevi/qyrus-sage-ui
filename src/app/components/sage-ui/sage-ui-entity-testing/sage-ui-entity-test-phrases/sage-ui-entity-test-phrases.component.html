@@ -1,6 +1,6 @@
 <div class="contentContainer position-absolute px-3">
     <div class="containerHeading pr-3 align-items-center d-flex justify-content-between">
-        <div class="fs-18 py-3">Entity Test Suite - Test Results</div>
+        <div class="fs-18 py-3">Entity Test Suite - Test Phrases</div>
         <div class="d-flex align-items-center">
             <i class="fa-regular fa-house grayText pr-3 pointer" data-toggle="tooltip" title="Home"
                 data-placement="bottom"></i>
@@ -8,9 +8,9 @@
             <i class="fa-thin fa-angle-right grayDisabled pr-2"></i>
             <span class="fw-400 fs-12 pr-2 grayIcon">Enity Testing</span>
             <i class="fa-thin fa-angle-right  grayDisabled pr-2"></i>
-            <span class="fw-400 fs-12 pr-2 grayIcon">Test Runs</span>
+            <span class="fw-400 fs-12 pr-2 grayIcon">Entity Test</span>
             <i class="fa-thin fa-angle-right grayDisabled pr-2"></i>
-            <span class="fs-12 fw-400 grayText">Test Results</span>
+            <span class="fs-12 fw-400 grayText">Test Phrases</span>
         </div>
     </div>
     <div class="testCaseCard bg-white d-flex justify-content-between mt-3 p-3">
@@ -33,13 +33,13 @@
             </div>
         </div>
 
-        <div class="d-flex align-items-center ">
+        <!-- <div class="d-flex align-items-center ">
             <i class="fa-regular fa-arrow-rotate-left pointer" data-toggle="tooltip" title="Refresh"
                 data-placement="bottom"></i>
-        </div>
+        </div> -->
     </div>
     <div class="py-3 d-flex align-items-center reportCard">
-        <div class="card mr-4">
+        <div class="card w-100">
 
             <div class="sortBlock p-4 d-flex justify-content-between align-items-center">
                 <!-- <div>
@@ -56,10 +56,10 @@
                         <option value="arrow">arrow</option>
                     </select>
                 </div> -->
-                <div class="d-flex">
-                    <div class="dropdown mr-3">
+                <div class="d-flex w-100 row mx-0">
+                    <div class="dropdown col-md-6 pl-0">
                         <button
-                            class="dropdown-toggle sortByDropdown sortByHas h-40p fs-14 fw-400 br-4p d-flex align-items-center justify-content-between"
+                            class="dropdown-toggle sortByDropdown h-40p fs-14 fw-400 br-4p d-flex align-items-center justify-content-between w-100"
                             type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             Sort by: Only has
@@ -74,9 +74,9 @@
                             </a>
                         </div>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown col-md-6 pl-0">
                         <button
-                            class="dropdown-toggle sortByDropdown sortByLoc h-40p fs-14 fw-400 br-4p d-flex align-items-center justify-content-between"
+                            class="dropdown-toggle sortByDropdown h-40p fs-14 fw-400 br-4p d-flex align-items-center justify-content-between w-100"
                             type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             Sort by: Location
@@ -98,16 +98,26 @@
                     <i class="fa-regular fa-filter-circle-xmark pointer" data-toggle="tooltip" title="Filter"
                         data-placement="bottom"></i>
                 </div>
+
             </div>
+            <div class="d-flex align-items-center justify-content-between w-100 px-4 pb-3">
+                <div class="fs-12 fw-400 d-flex align-items-center">
+                    <input class=" mr-2 ml-1 checkBox" type="checkbox" name="" id="">
+                    <label class="mb-0">Select All Phrases</label>
+                </div>
+                <div>
+                    <i class="fa-regular fa-cloud-arrow-up mr-4"></i>
+                    <i class="fa-regular fa-arrow-down-to-line"></i>
+                </div>
+
+            </div>
+
+
             <div class="graphDet px-4 pb-2">
 
                 <div class="card w-100 mb-3">
                     <div class="px-3 py-2 phraseBlock">
-                        <div>
-                            <label class="fs-12 fw-600 m-0">
-                                Test Phrase
-                            </label>
-                        </div>
+
                         <div class="phraseBtn fs-12 fw-400 phrasePrimary">
                             <span class="">
                                 in star restaurant in
@@ -116,20 +126,7 @@
                             <button>river</button>
                         </div>
                     </div>
-                    <div class="grayBg px-3 py-2 phraseBlock">
-                        <div>
-                            <label class="fs-12 fw-600 m-0">
-                                Result Phrase
-                            </label>
-                        </div>
-                        <div class="phraseBtn fs-12 fw-400 phrasePrimary">
-                            <span class="">
-                                in star restaurant in
-                            </span>
-                            <button class="mx-2">Moskva</button>
-                            <button>river</button>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="card w-100 mb-3">
                     <div class="px-3 py-2 phraseBlock">
@@ -193,22 +190,6 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="d-flex justify-content-between p-3 align-items-center">
-                <label class="fs-14 fw-600">Intent Match Scores</label>
-                <i class="fa-solid fa-arrow-up-right-and-arrow-down-left-from-center resizeArrow pointer"
-                    data-toggle="tooltip" title="Resize" data-placement="bottom"></i>
-            </div>
-            <div class="chartBlock d-flex align-items-center">
-                <ngx-charts-bar-horizontal-2d [view]="view" [scheme]="colorScheme" [results]="single"
-                    [scheme]="colorScheme" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis"
-                    [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-                    [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" (select)="onSelect($event)"
-                    (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
-                </ngx-charts-bar-horizontal-2d>
 
-            </div>
-
-        </div>
     </div>
 </div>
