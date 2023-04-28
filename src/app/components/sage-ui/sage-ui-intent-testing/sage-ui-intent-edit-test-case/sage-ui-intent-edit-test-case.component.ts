@@ -17,7 +17,7 @@ export class IntentEditTestCaseComponent implements OnInit {
   editTestStep3Form: FormGroup;
   editTestStep4Form: FormGroup;
   enableRunBtn: boolean = false;
-  enableSaveBtn: boolean = false;
+  formCompleted: boolean = false;
 
   validationMessage: Set<string> = new Set([]);
   currentFormIndex: number = 0;
@@ -148,29 +148,25 @@ export class IntentEditTestCaseComponent implements OnInit {
         })
       if (!fieldError) {
         this.showContent(6)
+        this.enableRunBtn = true;
       }
     }
-    if (formNumber === 5) {
-      this.showContent(6);
-      this.enableRunBtn = true;
-    }
-    if (formNumber === 6) {
-      this.showContent(1);
-      this.enableSaveBtn = true;
-    }
 
 
 
-    // logic for sending data to backend for creating test case
   }
 
 
+  runBtn(value: number) {
+    this.showContent(value);
+    this.enableRunBtn = false;
+    this.formCompleted = true;
+  }
 
   previous(formNo: number) {
+    if (this.stepsContent >= 2) {
 
-    this.showContent(this.stepsContent - 1);
-
+      this.showContent(this.stepsContent - 1);
+    }
   }
-
-
 }

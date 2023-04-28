@@ -12,7 +12,8 @@
     <div class="card mt-3 stepsMainCard w-100">
         <div class="stepsContainer">
             <div class="d-flex mt-4">
-                <div class="card stepsCard stepActive pointer">
+                <div class="card stepsCard pointer"
+                    [ngClass]="{'stepActive': (stepsContent == 1 && !formCompleted), 'stepSuccess': (stepsContent != 1 || formCompleted)}">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 1</span><br>
                         <span class="stepsDesc fs-14 fw-600">Test Information</span>
@@ -20,7 +21,8 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card stepsCard stepSuccess pointer">
+                <div class="card stepsCard pointer"
+                    [ngClass]="{'stepActive': (stepsContent>=2 && stepsContent<5 && !formCompleted)  , 'stepSuccess': (stepsContent > 4 || formCompleted)}">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 2</span><br>
                         <span class="stepsDesc fs-14 fw-600">Platform Configuration</span>
@@ -28,7 +30,8 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card stepsCard pointer">
+                <div class="card stepsCard pointer"
+                    [ngClass]="{'stepActive': (stepsContent == 5 && !formCompleted), 'stepSuccess': (stepsContent > 5 || formCompleted)}">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 3</span><br>
                         <span class="stepsDesc fs-14 fw-600">Intent Names</span>
@@ -36,7 +39,8 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card stepsCard pointer">
+                <div class="card stepsCard pointer"
+                    [ngClass]="{'stepActive': (stepsContent == 6 && !formCompleted), 'stepSuccess': (stepsContent > 6 || formCompleted)}">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 4</span><br>
                         <span class="stepsDesc fs-14 fw-600">Test Configuration</span>
@@ -422,22 +426,33 @@
                     <button class="cancelBtn fs-12 fw-600 py-2 px-3 mr-3" type="button" data-toggle="tooltip"
                         data-placement="bottom" title="Cancel">Cancel</button>
 
-                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" *ngIf="!enableRunBtn"
+                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" *ngIf="!enableRunBtn && !formCompleted"
                         (click)="saveNext(stepsContent)" type="button" data-toggle="modal" data-target="tooltip">
                         <span>Save & Next</span>
                         <i class="fa-solid fa-angle-right pl-2"></i>
                     </button>
-                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" *ngIf="enableRunBtn && !enableSaveBtn"
-                        click="saveBtn(stepsContent)" type="button" data-toggle="modal" data-target="#myModal"
-                        data-placement="bottom" title="Run Test">
+                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" *ngIf="enableRunBtn" (click)="runBtn(1)"
+                        type="button" data-toggle="modal" data-target="#myModal" data-placement="bottom"
+                        title="Run Test">
                         <span>Run Test</span>
                         <i class="fa-solid fa-angle-right pl-2"></i>
                     </button>
-                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600 " *ngIf="enableSaveBtn" type="button"
-                        data-toggle="modal" data-target="#myModal" data-placement="bottom" title="Run Test">
+                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600 " *ngIf="formCompleted" type="button"
+                        data-toggle="modal" data-placement="bottom" title="Run Test">
                         <span>Save</span>
-
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="">
+    <div class="modal fade spinnerPopup" id="myModal">
+        <div class="modal-dialog modal-dialog-centered justify-content-center">
+            <div class="modal-content fs-12 fw-600 p-3">
+                <div class="modal-body p-0 text-center">
+                    <i class="fa-duotone fa-spinner-third fa-spin justify-content-center d-flex fs-14"></i>
+                    <p class="m-0 pt-2">We are executing your test. Please wait for sometime.</p>
                 </div>
             </div>
         </div>
