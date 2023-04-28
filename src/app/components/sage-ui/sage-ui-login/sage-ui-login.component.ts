@@ -49,6 +49,4 @@ export class SageUiLoginComponent implements OnInit {
     })
   }
 
-
-
 }

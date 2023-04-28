@@ -21,6 +21,9 @@ import { SageUiEntityTestRunsComponent } from './sage-ui-entity-testing/sage-ui-
 import { SageUiEntityTestPhrasesComponent } from './sage-ui-entity-testing/sage-ui-entity-test-phrases/sage-ui-entity-test-phrases.component';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgxChartsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class SageUiModule { }

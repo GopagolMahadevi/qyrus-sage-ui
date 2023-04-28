@@ -12,7 +12,7 @@
     <div class="card mt-3 stepsMainCard w-100">
         <div class="stepsContainer">
             <div class="d-flex mt-4">
-                <div class="card stepsCard stepActive pointer" (click)="showContent(1)">
+                <div class="card stepsCard stepActive pointer">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 1</span><br>
                         <span class="stepsDesc fs-14 fw-600">Test Information</span>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card stepsCard stepSuccess pointer" (click)="showContent(2)">
+                <div class="card stepsCard stepSuccess pointer">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 2</span><br>
                         <span class="stepsDesc fs-14 fw-600">Platform Configuration</span>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card stepsCard pointer" (click)="showContent(3)">
+                <div class="card stepsCard pointer">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 3</span><br>
                         <span class="stepsDesc fs-14 fw-600">Intent Names</span>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card stepsCard pointer" (click)="showContent(4)">
+                <div class="card stepsCard pointer">
                     <div class="py-3 pl-3 stepDesc">
                         <span class="stepsText fs-14 fw-400">Step 4</span><br>
                         <span class="stepsDesc fs-14 fw-600">Test Configuration</span>
@@ -46,15 +46,26 @@
             </div>
             <div class="stepsScroll">
                 <div class="testMainDiv mt-3 w-100">
+                    <!-- step 1 -->
                     <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 1">
-                        <form action="">
+                        <form action="" [formGroup]='editTestStep1Form'>
                             <div class="form-group">
                                 <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Name</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="testName" formControlName="testName"
+                                    name="testName">
+                                <mat-error
+                                    *ngIf="editTestStep1Form.controls['testName'].hasError('required') && validationMessage.has('testName')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                             <div class="form-group">
                                 <label class="fs-12 fw-400 mb-1 formLabelText" for="">Test Description</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" id="testDesc" formControlName="testDesc"
+                                    name="testDesc"></textarea>
+                                <mat-error
+                                    *ngIf="editTestStep1Form.controls['testDesc'].hasError('required') && validationMessage.has('testDesc')"
+                                    class="fs-12 text-danger">
+                                    This field is required.<br></mat-error>
                             </div>
                             <div>
                                 <span class="formLabelText fs-12 fw-400">Select Platform</span>
@@ -85,81 +96,140 @@
                     </div>
                     <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 2">
                         <!-- step 2 form 1 -->
-                        <form class="form1 stepTwoFormOne d-none">
+                        <form class="form1 stepTwoFormOne" [formGroup]='editTestStep2Form1'>
                             <div class="form-group">
                                 <label class="fs-12 fw-400 mb-1 formLabelText" for="file-upload">Client Credentials
                                     JSON</label>
                                 <input class="form-control p-0 browseBtn" type="file" id="file-upload"
-                                    name="file-upload" accept="*" capture="environment">
+                                    name="file-upload" accept="*" capture="environment" formControlName="file"
+                                    name="file">
+                                <mat-error
+                                    *ngIf="editTestStep2Form1.controls['file'].hasError('required') && validationMessage.has('file')"
+                                    class="fs-12 text-danger">
+                                    Please choose file to be upload. <br></mat-error>
+
                             </div>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Project ID</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="projectId" formControlName="projectId"
+                                    name="projectId">
+                                <mat-error
+                                    *ngIf="editTestStep2Form1.controls['projectId'].hasError('required') && validationMessage.has('projectId')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                             <div class="justify-content-end d-flex pt-4 pb-3">
-                                <button class="btn connectBtn fs-12 fw-600 disabled" data-toggle="tooltip"
-                                    data-placement="bottom" title="Connect">Connect</button>
+                                <button class="btn connectBtn fs-12 fw-600" data-toggle="tooltip"
+                                    data-placement="bottom" title="Connect"
+                                    [disabled]="editTestStep2Form1.controls['file'].errors || editTestStep2Form1.controls['projectId'].errors">Connect</button>
                             </div>
                             <div>
-                                <p class="fs-12 fw-600 mb-3">To Grant access, login with the account which has access to
+                                <p class="fs-12 fw-600 mb-3">To Grant access, login with the account which has
+                                    access to
                                     your DialogFlow
                                     APIs. Copy the Auth Code and paste below.</p>
                                 <button class="btn fs-12 fw-600 grayDisabled mb-3" data-toggle="tooltip"
                                     data-placement="bottom" title="Grant Access">Grant Access</button>
                             </div>
                             <div class="form-group formLabelText">
-                                <label class="fs-12 fw-400 mb-1" for="">Enter the authorization code obtained from the
+                                <label class="fs-12 fw-400 mb-1" for="">Enter the authorization code obtained from
+                                    the
                                     grant access
                                     tab.nts File (.csv)</label>
                                 <input class="form-control fs-14 fw-400 grayDisabled" type="text"
-                                    placeholder="Authorization Code">
+                                    placeholder="Authorization Code" id="authCode" formControlName="authCode"
+                                    name="authCode">
+                                <mat-error
+                                    *ngIf="editTestStep2Form1.controls['authCode'].hasError('required') && validationMessage.has('authCode')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
+
                             </div>
                         </form>
+                    </div>
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 3">
                         <!-- step 2 form 2 -->
-                        <form class="form2 d-none">
+                        <form class="form2" [formGroup]='editTestStep2Form2'>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Server Token</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="serverToken" formControlName="serverToken"
+                                    name="serverToken">
+                                <mat-error
+                                    *ngIf="editTestStep2Form2.controls['serverToken'].hasError('required') && validationMessage.has('serverToken')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                         </form>
+                    </div>
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 4">
                         <!-- step 2 form 3 -->
-                        <form class="form3">
+                        <form class="form3" [formGroup]='editTestStep2Form3'>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Access Key</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="accessKey" formControlName="accessKey"
+                                    name="accessKey">
+                                <mat-error
+                                    *ngIf="editTestStep2Form3.controls['accessKey'].hasError('required') && validationMessage.has('accessKey')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Secret Key</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="secretKey" formControlName="secretKey"
+                                    name="secretKey">
+                                <mat-error
+                                    *ngIf="editTestStep2Form3.controls['secretKey'].hasError('required') && validationMessage.has('secretKey')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Bot Name</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="botName" formControlName="botName"
+                                    name="botName">
+                                <mat-error
+                                    *ngIf="editTestStep2Form3.controls['botName'].hasError('required') && validationMessage.has('botName')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Bot Alias</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="botAlias" formControlName="botAlias"
+                                    name="botAlias">
+                                <mat-error
+                                    *ngIf="editTestStep2Form3.controls['botAlias'].hasError('required') && validationMessage.has('botAlias')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                             <div class="form-group formLabelText">
                                 <label class="fs-12 fw-400 mb-1" for="">Bot Region</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="botRegion" formControlName="botRegion"
+                                    name="botRegion">
+                                <mat-error
+                                    *ngIf="editTestStep2Form3.controls['botRegion'].hasError('required') && validationMessage.has('botRegion')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                         </form>
                     </div>
                     <!-- step 3 -->
-                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 3">
-                        <form action="">
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 5">
+                        <form action="" [formGroup]='editTestStep3Form'>
                             <div class="form-group">
                                 <label class="fs-12 fw-400 mb-1 formLabelText" for="">Intents File (.csv) <i
                                         class="fa-regular fa-circle-info"></i></label>
                                 <input class="form-control p-0 browseBtn" type="file" id="file-upload"
-                                    name="file-upload" accept="*" capture="environment">
+                                    name="file-upload" accept="*" capture="environment" formControlName="file1"
+                                    name="file1">
+                                <mat-error
+                                    *ngIf="editTestStep3Form.controls['file1'].hasError('required') && validationMessage.has('file1')"
+                                    class="fs-12 text-danger">
+                                    This field is required. <br></mat-error>
                             </div>
                         </form>
                     </div>
                     <!-- step 4 -->
-                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 4">
-                        <form action="">
+                    <div class="w-72 mt-3 mb-5" *ngIf="stepsContent === 6">
+                        <form action="" [formGroup]='editTestStep4Form'>
                             <label class="fs-12 fw-400 formLabelText mb-3" for="">Test Type</label>
                             <div class="form-check pb-4 d-flex align-items-center pl-0">
                                 <label class="form-check-label fs-14 fw-400 radioBtnText">
@@ -182,19 +252,24 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <p class="fs-14 fw-400 p-3">In Normal mode of testing your bot, we do
+                                                <p class="fs-14 fw-400 p-3">In Normal mode of testing your bot, we
+                                                    do
                                                     not apply any type of text
                                                     transformations
-                                                    while testing your bot via the paraphrases we have generated. <br>
-                                                    It will be more of a vanilla test. To test your bot functionality
+                                                    while testing your bot via the paraphrases we have generated.
+                                                    <br>
+                                                    It will be more of a vanilla test. To test your bot
+                                                    functionality
                                                     with spelling mistakes,
                                                     grammatical
                                                     mistakes,
-                                                    null sentence structures, contractions, etc. You can choose to opt
+                                                    null sentence structures, contractions, etc. You can choose to
+                                                    opt
                                                     for either of the two modes
                                                     mentioned
                                                     below
-                                                    based on your requirements.</p>
+                                                    based on your requirements.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -221,13 +296,16 @@
                                             <div class="p-3">
                                                 <p class="fs-14 fw-400">In this mode we apply seven different
                                                     transformation in total and more
-                                                    to come. These transformations will mimic the writing/typing quality
+                                                    to come. These transformations will mimic the writing/typing
+                                                    quality
                                                     of non-english users.
                                                 </p>
-                                                <p class="fs-14 fw-400">The following transformations are applied:</p>
+                                                <p class="fs-14 fw-400">The following transformations are applied:
+                                                </p>
                                                 <div class="d-flex align-items-center pb-1">
                                                     <i class="fa-solid fa-circle-arrow-right pr-2"></i>
-                                                    <span class="fs-12 fw-400 pl-1">Spelling Mistake Transform</span>
+                                                    <span class="fs-12 fw-400 pl-1">Spelling Mistake
+                                                        Transform</span>
                                                 </div>
                                                 <div class="d-flex align-items-center pb-1">
                                                     <i class="fa-solid fa-circle-arrow-right pr-2"></i>
@@ -263,13 +341,16 @@
                                             <div class="p-3">
                                                 <p class="fs-14 fw-400">In this mode we apply seven different
                                                     transformation in total and more
-                                                    to come. These transformations will mimic the writing/typing quality
+                                                    to come. These transformations will mimic the writing/typing
+                                                    quality
                                                     of non-english users.
                                                 </p>
-                                                <p class="fs-14 fw-400">The following transformations are applied:</p>
+                                                <p class="fs-14 fw-400">The following transformations are applied:
+                                                </p>
                                                 <div class="d-flex align-items-center pb-1">
                                                     <i class="fa-solid fa-circle-arrow-right pr-2"></i>
-                                                    <span class="fs-12 fw-400 pl-1">Spelling Mistake Transform</span>
+                                                    <span class="fs-12 fw-400 pl-1">Spelling Mistake
+                                                        Transform</span>
                                                 </div>
                                                 <div class="d-flex align-items-center pb-1">
                                                     <i class="fa-solid fa-circle-arrow-right pr-2"></i>
@@ -281,7 +362,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center pb-1">
                                                     <i class="fa-solid fa-circle-arrow-right pr-2"></i>
-                                                    <span class="fs-12 fw-400 pl-1">Null/No Sentence Structure</span>
+                                                    <span class="fs-12 fw-400 pl-1">Null/No Sentence
+                                                        Structure</span>
                                                 </div>
                                                 <div class="d-flex align-items-center pb-1">
                                                     <i class="fa-solid fa-circle-arrow-right pr-2"></i>
@@ -331,17 +413,30 @@
                 </div>
             </div>
             <div class="stepBackDiv justify-content-between d-flex align-items-end">
-                <button type="button" class="btn backBtn fs-12 fw-600" data-toggle="tooltip" data-placement="bottom"
-                    title="Back">
+
+                <button type="button" class="btn backBtn fs-12 fw-600" (click)="previous(stepsContent)"
+                    data-toggle="tooltip" data-placement="bottom" title="Back">
                     <i class="fa-solid fa-angle-left pl-3 pr-2"></i>Back
                 </button>
                 <div>
                     <button class="cancelBtn fs-12 fw-600 py-2 px-3 mr-3" type="button" data-toggle="tooltip"
                         data-placement="bottom" title="Cancel">Cancel</button>
-                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" type="button" data-toggle="tooltip"
-                        data-placement="bottom" title="Save&Next">
+
+                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" *ngIf="!enableRunBtn"
+                        (click)="saveNext(stepsContent)" type="button" data-toggle="modal" data-target="tooltip">
                         <span>Save & Next</span>
                         <i class="fa-solid fa-angle-right pl-2"></i>
+                    </button>
+                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600" *ngIf="enableRunBtn && !enableSaveBtn"
+                        click="saveBtn(stepsContent)" type="button" data-toggle="modal" data-target="#myModal"
+                        data-placement="bottom" title="Run Test">
+                        <span>Run Test</span>
+                        <i class="fa-solid fa-angle-right pl-2"></i>
+                    </button>
+                    <button class="btn saveAndNextBtn py-2 px-3 fs-12 fw-600 " *ngIf="enableSaveBtn" type="button"
+                        data-toggle="modal" data-target="#myModal" data-placement="bottom" title="Run Test">
+                        <span>Save</span>
+
                     </button>
                 </div>
             </div>
